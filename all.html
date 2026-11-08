@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>全部游戏 - 靖满客</title>
-<meta name="description" content="站内所有可下载资源，按上架时间排列">
+<meta name="description" content="网盘同步的全部单机游戏，按最近更新排列">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -65,7 +65,7 @@ body>.wrap{flex:1}
 .card-body p{font-size:12px;color:var(--muted);margin-bottom:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags span{font-size:11px;padding:2.5px 8px;border-radius:99px;background:#ffffff10;color:#a8b3c6;border:1px solid #ffffff0d}
-.badge{position:absolute;top:10px;left:10px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;background:var(--brand);color:#fff;letter-spacing:.3px}
+.badge{position:absolute;top:10px;right:10px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;background:var(--brand);color:#fff;letter-spacing:.3px}
 
 /* 分类入口 */
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
@@ -90,9 +90,9 @@ body>.wrap{flex:1}
 .spec{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:13px;color:#a5b0c2;margin-bottom:26px}
 .spec b{color:var(--text);font-weight:650}
 .dl{display:flex;gap:14px;flex-wrap:wrap}
-.dl button{width:100%;height:56px;border:none;border-radius:13px;font-size:15.5px;font-weight:750;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.dl a{width:100%;height:56px;border:none;border-radius:13px;font-size:15.5px;font-weight:750;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
 .dl .quark{background:linear-gradient(120deg,#2f6bff,#5b8cff);color:#fff}
-.dl button:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.dl a:hover{transform:translateY(-2px);filter:brightness(1.1)}
 .tip{font-size:12.5px;color:#7f8a9d;margin-top:14px}
 .steps{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
 .steps b{display:block;font-size:13.5px;margin-bottom:10px;color:#dfe5ef}
@@ -137,8 +137,9 @@ footer a:hover{color:var(--brand)}
   <nav class="nav-links">
     <a href="index.html">首页</a>
     <a href="all.html">全部游戏</a>
-    <a href="strategy.html">策略模拟</a>
     <a href="action.html">动作冒险</a>
+    <a href="strategy.html">策略模拟</a>
+    <a href="shooter.html">射击竞技</a>
     <a href="casual.html">休闲解谜</a>
   </nav>
   <form class="nav-search" onsubmit="goSearch(event)">
@@ -148,56 +149,581 @@ footer a:hover{color:var(--brand)}
 <div class="wrap">
   <div class="page-head">
     <h1>全部游戏</h1>
-    <p>站内所有可下载资源，按上架时间排列　共 7 款</p>
+    <p>网盘同步的全部单机游戏，按最近更新排列　共 82 款</p>
   </div>
-  <section class="sec"><div class="grid"><a class="card" href="pvz.html">
+  <section class="sec"><div class="grid"><a class="card" href="ac-series.html">
+    <div class="card-cover"><img src="img/ac-series/cover.svg" alt="刺客信条系列" loading="lazy"></div>
+    <div class="card-body">
+      <h3>刺客信条系列</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>潜行</span><span>开放世界</span></div>
+    </div>
+  </a><a class="card" href="victoria3.html">
+    <div class="card-cover"><img src="img/victoria3/cover.jpg" alt="维多利亚3" loading="lazy"></div>
+    <div class="card-body">
+      <h3>维多利亚3</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>经济</span><span>大战略</span><span>历史</span></div>
+    </div>
+  </a><a class="card" href="stellaris.html">
+    <div class="card-cover"><img src="img/stellaris/cover.jpg" alt="群星" loading="lazy"></div>
+    <div class="card-body">
+      <h3>群星</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>太空</span><span>大战略</span><span>沙盒</span></div>
+    </div>
+  </a><a class="card" href="dave-diver.html">
+    <div class="card-cover"><img src="img/dave-diver/cover.svg" alt="潜水员戴夫" loading="lazy"></div>
+    <div class="card-body">
+      <h3>潜水员戴夫</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>像素</span><span>经营</span><span>休闲</span></div>
+    </div>
+  </a><a class="card" href="elden-ring.html">
+    <div class="card-cover"><img src="img/elden-ring/cover.jpg" alt="艾尔登法环" loading="lazy"></div>
+    <div class="card-body">
+      <h3>艾尔登法环</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>动作RPG</span><span>开放世界</span><span>魂系</span></div>
+    </div>
+  </a><a class="card" href="cyberpunk2077.html">
+    <div class="card-cover"><img src="img/cyberpunk2077/cover.svg" alt="赛博朋克2077" loading="lazy"></div>
+    <div class="card-body">
+      <h3>赛博朋克2077</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>开放世界</span><span>科幻</span><span>第一人称</span></div>
+    </div>
+  </a><a class="card" href="stardew-valley.html">
+    <div class="card-cover"><img src="img/stardew-valley/cover.svg" alt="星露谷物语" loading="lazy"></div>
+    <div class="card-body">
+      <h3>星露谷物语</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>农场</span><span>养成</span><span>像素</span></div>
+    </div>
+  </a><a class="card" href="god-of-war-4.html">
+    <div class="card-cover"><img src="img/god-of-war-4/cover.svg" alt="战神4" loading="lazy"></div>
+    <div class="card-body">
+      <h3>战神4</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>动作</span><span>北欧神话</span><span>剧情</span></div>
+    </div>
+  </a><a class="card" href="pvz.html">
     <div class="card-cover"><img src="img/pvz/cover.jpg" alt="植物大战僵尸" loading="lazy"></div>
     <div class="card-body">
       <h3>植物大战僵尸</h3>
-      <p>年度版 · 中文 · 解压即玩</p>
+      <p>系列合集 · 多部打包</p>
       <div class="tags"><span>塔防</span><span>休闲</span><span>经典怀旧</span></div>
+    </div>
+  </a><a class="card" href="black-myth-wukong.html">
+    <div class="card-cover"><img src="img/black-myth-wukong/cover.svg" alt="黑神话：悟空" loading="lazy"></div>
+    <div class="card-body">
+      <h3>黑神话：悟空</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>动作</span><span>国产</span><span>神话</span></div>
     </div>
   </a><a class="card" href="civilization6.html">
     <div class="card-cover"><img src="img/civilization6/cover.jpg" alt="文明6" loading="lazy"></div>
     <div class="card-body">
       <h3>文明6</h3>
-      <p>典藏版 · 全 DLC · 中文</p>
+      <p>中文版 · 解压即玩</p>
       <div class="tags"><span>策略</span><span>回合制</span><span>4X</span></div>
     </div>
-  </a><a class="card" href="elden-ring.html">
-    <div class="card-cover"><div class="badge">NEW</div><img src="img/elden-ring/cover.jpg" alt="艾尔登法环" loading="lazy"></div>
+  </a><a class="card" href="cities-skylines-2.html">
+    <div class="card-cover"><img src="img/cities-skylines-2/cover.svg" alt="城市天际线2" loading="lazy"></div>
     <div class="card-body">
-      <h3>艾尔登法环</h3>
-      <p>黄金树幽影版 · 中文 · 含 DLC</p>
-      <div class="tags"><span>动作RPG</span><span>开放世界</span><span>魂系</span></div>
+      <h3>城市天际线2</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>模拟</span><span>建造</span><span>经营</span></div>
     </div>
-  </a><a class="card" href="stellaris.html">
-    <div class="card-cover"><div class="badge">NEW</div><img src="img/stellaris/cover.jpg" alt="群星" loading="lazy"></div>
+  </a><a class="card" href="death-stranding-2.html">
+    <div class="card-cover"><img src="img/death-stranding-2/cover.svg" alt="死亡搁浅2：冥滩之上" loading="lazy"></div>
     <div class="card-body">
-      <h3>群星</h3>
-      <p>银河版 · 含主要 DLC</p>
-      <div class="tags"><span>太空</span><span>大战略</span><span>沙盒</span></div>
+      <h3>死亡搁浅2：冥滩之上</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>冒险</span><span>叙事</span><span>开放世界</span></div>
     </div>
-  </a><a class="card" href="victoria3.html">
-    <div class="card-cover"><div class="badge">NEW</div><img src="img/victoria3/cover.jpg" alt="维多利亚3" loading="lazy"></div>
+  </a><a class="card" href="sims-4.html">
+    <div class="card-cover"><img src="img/sims-4/cover.svg" alt="模拟人生4" loading="lazy"></div>
     <div class="card-body">
-      <h3>维多利亚3</h3>
-      <p>豪华版 · 中文</p>
-      <div class="tags"><span>经济</span><span>大战略</span><span>历史</span></div>
+      <h3>模拟人生4</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>模拟</span><span>养成</span><span>沙盒</span></div>
+    </div>
+  </a><a class="card" href="hearts-of-iron.html">
+    <div class="card-cover"><img src="img/hearts-of-iron/cover.svg" alt="钢铁雄心" loading="lazy"></div>
+    <div class="card-body">
+      <h3>钢铁雄心</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>二战</span><span>大战略</span><span>军事</span></div>
     </div>
   </a><a class="card" href="warcraft3.html">
-    <div class="card-cover"><img src="img/warcraft3/cover.jpg" alt="魔兽争霸3" loading="lazy"></div>
+    <div class="card-cover"><img src="img/warcraft3/cover.jpg" alt="魔兽争霸3：冰封王座" loading="lazy"></div>
     <div class="card-body">
-      <h3>魔兽争霸3</h3>
-      <p>冰封王座 · 重制增强版</p>
+      <h3>魔兽争霸3：冰封王座</h3>
+      <p>中文版 · 解压即玩</p>
       <div class="tags"><span>RTS</span><span>即时战略</span><span>电竞经典</span></div>
     </div>
-  </a><a class="card" href="little-nightmares.html">
-    <div class="card-cover"><div class="badge">NEW</div><img src="img/little-nightmares/cover.jpg" alt="小小梦魇" loading="lazy"></div>
+  </a><a class="card" href="mount-blade.html">
+    <div class="card-cover"><img src="img/mount-blade/cover.svg" alt="骑马与砍杀" loading="lazy"></div>
     <div class="card-body">
-      <h3>小小梦魇</h3>
-      <p>完全版 · 含全部章节</p>
-      <div class="tags"><span>冒险</span><span>解谜</span><span>氛围</span></div>
+      <h3>骑马与砍杀</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>中世纪</span><span>带兵</span><span>冷兵器</span></div>
+    </div>
+  </a><a class="card" href="gta5.html">
+    <div class="card-cover"><img src="img/gta5/cover.svg" alt="GTA5 增强版" loading="lazy"></div>
+    <div class="card-body">
+      <h3>GTA5 增强版</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>开放世界</span><span>犯罪</span><span>联机</span></div>
+    </div>
+  </a><a class="card" href="escape-from-tarkov.html">
+    <div class="card-cover"><img src="img/escape-from-tarkov/cover.svg" alt="逃离塔科夫" loading="lazy"></div>
+    <div class="card-body">
+      <h3>逃离塔科夫</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>硬核</span><span>撤离</span><span>第一人称</span></div>
+    </div>
+  </a><a class="card" href="rdr2.html">
+    <div class="card-cover"><img src="img/rdr2/cover.svg" alt="荒野大镖客2" loading="lazy"></div>
+    <div class="card-body">
+      <h3>荒野大镖客2</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>西部</span><span>开放世界</span><span>剧情</span></div>
+    </div>
+  </a><a class="card" href="gta-series.html">
+    <div class="card-cover"><img src="img/gta-series/cover.svg" alt="GTA 系列" loading="lazy"></div>
+    <div class="card-body">
+      <h3>GTA 系列</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>开放世界</span><span>经典</span><span>犯罪</span></div>
+    </div>
+  </a><a class="card" href="monument-valley-3.html">
+    <div class="card-cover"><img src="img/monument-valley-3/cover.svg" alt="纪念碑谷3" loading="lazy"></div>
+    <div class="card-body">
+      <h3>纪念碑谷3</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>解谜</span><span>视觉</span><span>唯美</span></div>
+    </div>
+  </a><a class="card" href="sultans-game.html">
+    <div class="card-cover"><img src="img/sultans-game/cover.svg" alt="苏丹的游戏" loading="lazy"></div>
+    <div class="card-body">
+      <h3>苏丹的游戏</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>卡牌</span><span>叙事</span><span>策略</span></div>
+    </div>
+  </a><a class="card" href="tomb-raider-series.html">
+    <div class="card-cover"><img src="img/tomb-raider-series/cover.svg" alt="古墓丽影 1-11 合集" loading="lazy"></div>
+    <div class="card-body">
+      <h3>古墓丽影 1-11 合集</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>冒险</span><span>解谜</span><span>系列</span></div>
+    </div>
+  </a><a class="card" href="witcher-3.html">
+    <div class="card-cover"><img src="img/witcher-3/cover.svg" alt="巫师3：狂猎" loading="lazy"></div>
+    <div class="card-body">
+      <h3>巫师3：狂猎</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>角色扮演</span><span>开放世界</span><span>剧情</span></div>
+    </div>
+  </a><a class="card" href="dang-tuan.html">
+    <div class="card-cover"><img src="img/dang-tuan/cover.svg" alt="完蛋！我被美女包围了！" loading="lazy"></div>
+    <div class="card-body">
+      <h3>完蛋！我被美女包围了！</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>真人</span><span>互动</span><span>恋爱</span></div>
+    </div>
+  </a><a class="card" href="cuphead.html">
+    <div class="card-cover"><img src="img/cuphead/cover.svg" alt="茶杯头" loading="lazy"></div>
+    <div class="card-body">
+      <h3>茶杯头</h3>
+      <p>PC + 手机双端</p>
+      <div class="tags"><span>横版</span><span>射击</span><span>硬核</span></div>
+    </div>
+  </a><a class="card" href="kingdom-come.html">
+    <div class="card-cover"><img src="img/kingdom-come/cover.svg" alt="天国：拯救" loading="lazy"></div>
+    <div class="card-body">
+      <h3>天国：拯救</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>中世纪</span><span>写实</span><span>开放世界</span></div>
+    </div>
+  </a><a class="card" href="dmc5.html">
+    <div class="card-cover"><img src="img/dmc5/cover.svg" alt="鬼泣5" loading="lazy"></div>
+    <div class="card-body">
+      <h3>鬼泣5</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>动作</span><span>连招</span><span>爽快</span></div>
+    </div>
+  </a><a class="card" href="sekiro.html">
+    <div class="card-cover"><img src="img/sekiro/cover.svg" alt="只狼：影逝二度" loading="lazy"></div>
+    <div class="card-body">
+      <h3>只狼：影逝二度</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>动作</span><span>弹反</span><span>魂系</span></div>
+    </div>
+  </a><a class="card" href="ghost-of-tsushima.html">
+    <div class="card-cover"><img src="img/ghost-of-tsushima/cover.svg" alt="对马岛之魂 导演剪辑版" loading="lazy"></div>
+    <div class="card-body">
+      <h3>对马岛之魂 导演剪辑版</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>武士</span><span>开放世界</span><span>电影感</span></div>
+    </div>
+  </a><a class="card" href="god-of-war-1-2.html">
+    <div class="card-cover"><img src="img/god-of-war-1-2/cover.svg" alt="战神 1+2" loading="lazy"></div>
+    <div class="card-body">
+      <h3>战神 1+2</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>动作</span><span>希腊神话</span><span>经典</span></div>
+    </div>
+  </a><a class="card" href="ark-ascended.html">
+    <div class="card-cover"><img src="img/ark-ascended/cover.svg" alt="方舟：生存飞升" loading="lazy"></div>
+    <div class="card-body">
+      <h3>方舟：生存飞升</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>生存</span><span>恐龙</span><span>沙盒</span></div>
+    </div>
+  </a><a class="card" href="burma-war.html">
+    <div class="card-cover"><img src="img/burma-war/cover.svg" alt="血战缅甸" loading="lazy"></div>
+    <div class="card-body">
+      <h3>血战缅甸</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>二战</span><span>射击</span><span>怀旧</span></div>
+    </div>
+  </a><a class="card" href="ready-or-not.html">
+    <div class="card-cover"><img src="img/ready-or-not/cover.svg" alt="严阵以待" loading="lazy"></div>
+    <div class="card-body">
+      <h3>严阵以待</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>战术</span><span>特警</span><span>联机</span></div>
+    </div>
+  </a><a class="card" href="age-of-empires.html">
+    <div class="card-cover"><img src="img/age-of-empires/cover.svg" alt="帝国时代" loading="lazy"></div>
+    <div class="card-body">
+      <h3>帝国时代</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>RTS</span><span>历史</span><span>经典</span></div>
+    </div>
+  </a><a class="card" href="dynasty-warriors.html">
+    <div class="card-cover"><img src="img/dynasty-warriors/cover.svg" alt="真三国无双" loading="lazy"></div>
+    <div class="card-body">
+      <h3>真三国无双</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>割草</span><span>三国</span><span>动作</span></div>
+    </div>
+  </a><a class="card" href="tears-of-the-kingdom.html">
+    <div class="card-cover"><img src="img/tears-of-the-kingdom/cover.svg" alt="塞尔达传说：王国之泪" loading="lazy"></div>
+    <div class="card-body">
+      <h3>塞尔达传说：王国之泪</h3>
+      <p>PC + 手机双端</p>
+      <div class="tags"><span>开放世界</span><span>解谜</span><span>创造</span></div>
+    </div>
+  </a><a class="card" href="subnautica-below-zero.html">
+    <div class="card-cover"><img src="img/subnautica-below-zero/cover.svg" alt="深海迷航：零度之下" loading="lazy"></div>
+    <div class="card-body">
+      <h3>深海迷航：零度之下</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>生存</span><span>海洋</span><span>探索</span></div>
+    </div>
+  </a><a class="card" href="silksong.html">
+    <div class="card-cover"><img src="img/silksong/cover.svg" alt="空洞骑士：丝之歌" loading="lazy"></div>
+    <div class="card-body">
+      <h3>空洞骑士：丝之歌</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>横版</span><span>动作</span><span>硬核</span></div>
+    </div>
+  </a><a class="card" href="call-of-duty-series.html">
+    <div class="card-cover"><img src="img/call-of-duty-series/cover.svg" alt="使命召唤 1-17 合集" loading="lazy"></div>
+    <div class="card-body">
+      <h3>使命召唤 1-17 合集</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>射击</span><span>战役</span><span>系列</span></div>
+    </div>
+  </a><a class="card" href="brotato.html">
+    <div class="card-cover"><img src="img/brotato/cover.svg" alt="土豆兄弟" loading="lazy"></div>
+    <div class="card-body">
+      <h3>土豆兄弟</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>割草</span><span>肉鸽</span><span>轻松</span></div>
+    </div>
+  </a><a class="card" href="titanfall-2.html">
+    <div class="card-cover"><img src="img/titanfall-2/cover.svg" alt="泰坦陨落2" loading="lazy"></div>
+    <div class="card-body">
+      <h3>泰坦陨落2</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>机甲</span><span>跑酷</span><span>射击</span></div>
+    </div>
+  </a><a class="card" href="walking-dead.html">
+    <div class="card-cover"><img src="img/walking-dead/cover.svg" alt="行尸走肉 全四季" loading="lazy"></div>
+    <div class="card-body">
+      <h3>行尸走肉 全四季</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>叙事</span><span>末日</span><span>选择</span></div>
+    </div>
+  </a><a class="card" href="alan-wake-2.html">
+    <div class="card-cover"><img src="img/alan-wake-2/cover.svg" alt="心灵杀手2" loading="lazy"></div>
+    <div class="card-body">
+      <h3>心灵杀手2</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>恐怖</span><span>叙事</span><span>悬疑</span></div>
+    </div>
+  </a><a class="card" href="baldurs-gate-3.html">
+    <div class="card-cover"><img src="img/baldurs-gate-3/cover.svg" alt="博德之门3" loading="lazy"></div>
+    <div class="card-body">
+      <h3>博德之门3</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>CRPG</span><span>D&amp;D</span><span>自由</span></div>
+    </div>
+  </a><a class="card" href="beach-head.html">
+    <div class="card-cover"><img src="img/beach-head/cover.svg" alt="抢滩登陆战" loading="lazy"></div>
+    <div class="card-body">
+      <h3>抢滩登陆战</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>射击</span><span>怀旧</span><span>防守</span></div>
+    </div>
+  </a><a class="card" href="death-stranding-dc.html">
+    <div class="card-cover"><img src="img/death-stranding-dc/cover.svg" alt="死亡搁浅 导演剪辑版" loading="lazy"></div>
+    <div class="card-body">
+      <h3>死亡搁浅 导演剪辑版</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>叙事</span><span>开放世界</span><span>独特</span></div>
+    </div>
+  </a><a class="card" href="red-alert.html">
+    <div class="card-cover"><img src="img/red-alert/cover.svg" alt="红色警戒" loading="lazy"></div>
+    <div class="card-body">
+      <h3>红色警戒</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>RTS</span><span>怀旧</span><span>即时战略</span></div>
+    </div>
+  </a><a class="card" href="spider-man-2.html">
+    <div class="card-cover"><img src="img/spider-man-2/cover.svg" alt="漫威蜘蛛侠2" loading="lazy"></div>
+    <div class="card-body">
+      <h3>漫威蜘蛛侠2</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>超级英雄</span><span>开放世界</span><span>动作</span></div>
+    </div>
+  </a><a class="card" href="nfs-series.html">
+    <div class="card-cover"><img src="img/nfs-series/cover.svg" alt="极品飞车 1-21 全系列" loading="lazy"></div>
+    <div class="card-body">
+      <h3>极品飞车 1-21 全系列</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>竞速</span><span>改装</span><span>系列</span></div>
+    </div>
+  </a><a class="card" href="binding-of-isaac.html">
+    <div class="card-cover"><img src="img/binding-of-isaac/cover.svg" alt="以撒的结合" loading="lazy"></div>
+    <div class="card-body">
+      <h3>以撒的结合</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>肉鸽</span><span>地牢</span><span>像素</span></div>
+    </div>
+  </a><a class="card" href="alien-shooter-series.html">
+    <div class="card-cover"><img src="img/alien-shooter-series/cover.svg" alt="孤胆枪手 1-3 合集" loading="lazy"></div>
+    <div class="card-body">
+      <h3>孤胆枪手 1-3 合集</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>俯视</span><span>射击</span><span>爽快</span></div>
+    </div>
+  </a><a class="card" href="cs16.html">
+    <div class="card-cover"><img src="img/cs16/cover.svg" alt="CS 1.6" loading="lazy"></div>
+    <div class="card-body">
+      <h3>CS 1.6</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>FPS</span><span>电竞</span><span>经典</span></div>
+    </div>
+  </a><a class="card" href="minecraft.html">
+    <div class="card-cover"><img src="img/minecraft/cover.svg" alt="我的世界" loading="lazy"></div>
+    <div class="card-body">
+      <h3>我的世界</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>沙盒</span><span>创造</span><span>像素</span></div>
+    </div>
+  </a><a class="card" href="palworld.html">
+    <div class="card-cover"><img src="img/palworld/cover.svg" alt="幻兽帕鲁" loading="lazy"></div>
+    <div class="card-body">
+      <h3>幻兽帕鲁</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>抓宠</span><span>生存</span><span>建造</span></div>
+    </div>
+  </a><a class="card" href="tale-of-immortal.html">
+    <div class="card-cover"><img src="img/tale-of-immortal/cover.svg" alt="鬼谷八荒" loading="lazy"></div>
+    <div class="card-body">
+      <h3>鬼谷八荒</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>修仙</span><span>沙盒</span><span>国产</span></div>
+    </div>
+  </a><a class="card" href="fallout-series.html">
+    <div class="card-cover"><img src="img/fallout-series/cover.svg" alt="辐射系列" loading="lazy"></div>
+    <div class="card-body">
+      <h3>辐射系列</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>废土</span><span>末世</span><span>角色扮演</span></div>
+    </div>
+  </a><a class="card" href="tlou2.html">
+    <div class="card-cover"><img src="img/tlou2/cover.svg" alt="最后生还者2 重制版" loading="lazy"></div>
+    <div class="card-body">
+      <h3>最后生还者2 重制版</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>叙事</span><span>末日</span><span>剧情</span></div>
+    </div>
+  </a><a class="card" href="magic-tower.html">
+    <div class="card-cover"><img src="img/magic-tower/cover.svg" alt="魔塔" loading="lazy"></div>
+    <div class="card-body">
+      <h3>魔塔</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>解谜</span><span>数值</span><span>怀旧</span></div>
+    </div>
+  </a><a class="card" href="resident-evil-series.html">
+    <div class="card-cover"><img src="img/resident-evil-series/cover.svg" alt="生化危机系列合集" loading="lazy"></div>
+    <div class="card-body">
+      <h3>生化危机系列合集</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>恐怖</span><span>生存</span><span>系列</span></div>
+    </div>
+  </a><a class="card" href="shanghai-1937.html">
+    <div class="card-cover"><img src="img/shanghai-1937/cover.svg" alt="抗日血战上海滩" loading="lazy"></div>
+    <div class="card-body">
+      <h3>抗日血战上海滩</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>射击</span><span>怀旧</span><span>国产</span></div>
+    </div>
+  </a><a class="card" href="split-fiction.html">
+    <div class="card-cover"><img src="img/split-fiction/cover.svg" alt="双影奇境" loading="lazy"></div>
+    <div class="card-body">
+      <h3>双影奇境</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>双人</span><span>合作</span><span>冒险</span></div>
+    </div>
+  </a><a class="card" href="total-war-series.html">
+    <div class="card-cover"><img src="img/total-war-series/cover.svg" alt="全面战争系列合集" loading="lazy"></div>
+    <div class="card-body">
+      <h3>全面战争系列合集</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>大战略</span><span>战场</span><span>系列</span></div>
+    </div>
+  </a><a class="card" href="dying-light-2.html">
+    <div class="card-cover"><img src="img/dying-light-2/cover.svg" alt="消逝的光芒2" loading="lazy"></div>
+    <div class="card-body">
+      <h3>消逝的光芒2</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>跑酷</span><span>丧尸</span><span>联机</span></div>
+    </div>
+  </a><a class="card" href="temple-run.html">
+    <div class="card-cover"><img src="img/temple-run/cover.svg" alt="神庙逃亡" loading="lazy"></div>
+    <div class="card-body">
+      <h3>神庙逃亡</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>跑酷</span><span>休闲</span><span>经典</span></div>
+    </div>
+  </a><a class="card" href="euro-truck-2.html">
+    <div class="card-cover"><img src="img/euro-truck-2/cover.svg" alt="欧洲卡车模拟2" loading="lazy"></div>
+    <div class="card-body">
+      <h3>欧洲卡车模拟2</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>模拟</span><span>驾驶</span><span>解压</span></div>
+    </div>
+  </a><a class="card" href="naruto-storm-4.html">
+    <div class="card-cover"><img src="img/naruto-storm-4/cover.svg" alt="火影忍者：究极风暴4" loading="lazy"></div>
+    <div class="card-body">
+      <h3>火影忍者：究极风暴4</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>格斗</span><span>动漫</span><span>忍者</span></div>
+    </div>
+  </a><a class="card" href="forza-horizon-5.html">
+    <div class="card-cover"><img src="img/forza-horizon-5/cover.svg" alt="极限竞速：地平线5" loading="lazy"></div>
+    <div class="card-body">
+      <h3>极限竞速：地平线5</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>赛车</span><span>开放世界</span><span>联机</span></div>
+    </div>
+  </a><a class="card" href="total-war-warhammer-2.html">
+    <div class="card-cover"><img src="img/total-war-warhammer-2/cover.svg" alt="全面战争：战锤2" loading="lazy"></div>
+    <div class="card-body">
+      <h3>全面战争：战锤2</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>奇幻</span><span>战场</span><span>战略</span></div>
+    </div>
+  </a><a class="card" href="uncharted-collection.html">
+    <div class="card-cover"><img src="img/uncharted-collection/cover.svg" alt="神秘海域：盗贼遗产合集" loading="lazy"></div>
+    <div class="card-body">
+      <h3>神秘海域：盗贼遗产合集</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>冒险</span><span>寻宝</span><span>电影感</span></div>
+    </div>
+  </a><a class="card" href="thehunter-cotw.html">
+    <div class="card-cover"><img src="img/thehunter-cotw/cover.svg" alt="猎人：荒野的召唤" loading="lazy"></div>
+    <div class="card-body">
+      <h3>猎人：荒野的召唤</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>狩猎</span><span>硬核</span><span>开放世界</span></div>
+    </div>
+  </a><a class="card" href="binding-of-isaac-full.html">
+    <div class="card-cover"><img src="img/binding-of-isaac-full/cover.svg" alt="以撒的结合 全DLC版" loading="lazy"></div>
+    <div class="card-body">
+      <h3>以撒的结合 全DLC版</h3>
+      <p>PC + 手机双端</p>
+      <div class="tags"><span>肉鸽</span><span>地牢</span><span>双端</span></div>
+    </div>
+  </a><a class="card" href="starcraft.html">
+    <div class="card-cover"><img src="img/starcraft/cover.svg" alt="星际争霸" loading="lazy"></div>
+    <div class="card-body">
+      <h3>星际争霸</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>RTS</span><span>电竞</span><span>经典</span></div>
+    </div>
+  </a><a class="card" href="diablo-series.html">
+    <div class="card-cover"><img src="img/diablo-series/cover.svg" alt="暗黑破坏神合集" loading="lazy"></div>
+    <div class="card-body">
+      <h3>暗黑破坏神合集</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>刷装备</span><span>地牢</span><span>系列</span></div>
+    </div>
+  </a><a class="card" href="road-rash.html">
+    <div class="card-cover"><img src="img/road-rash/cover.svg" alt="暴力摩托 2002-2008" loading="lazy"></div>
+    <div class="card-body">
+      <h3>暴力摩托 2002-2008</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>摩托</span><span>怀旧</span><span>竞速</span></div>
+    </div>
+  </a><a class="card" href="god-of-war-ragnarok.html">
+    <div class="card-cover"><img src="img/god-of-war-ragnarok/cover.svg" alt="战神5：诸神黄昏" loading="lazy"></div>
+    <div class="card-body">
+      <h3>战神5：诸神黄昏</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>动作</span><span>北欧神话</span><span>剧情</span></div>
+    </div>
+  </a><a class="card" href="kingdom-two-crowns.html">
+    <div class="card-cover"><img src="img/kingdom-two-crowns/cover.svg" alt="王国：两位君主" loading="lazy"></div>
+    <div class="card-body">
+      <h3>王国：两位君主</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>建造</span><span>防守</span><span>像素</span></div>
+    </div>
+  </a><a class="card" href="chinese-parents.html">
+    <div class="card-cover"><img src="img/chinese-parents/cover.svg" alt="中国式家长" loading="lazy"></div>
+    <div class="card-body">
+      <h3>中国式家长</h3>
+      <p>PC + 手机双端</p>
+      <div class="tags"><span>养成</span><span>国产</span><span>模拟</span></div>
+    </div>
+  </a><a class="card" href="dredge.html">
+    <div class="card-cover"><img src="img/dredge/cover.svg" alt="渔帆暗涌" loading="lazy"></div>
+    <div class="card-body">
+      <h3>渔帆暗涌</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>钓鱼</span><span>恐怖</span><span>像素</span></div>
+    </div>
+  </a><a class="card" href="chinese-online-game.html">
+    <div class="card-cover"><img src="img/chinese-online-game/cover.svg" alt="中国式网游" loading="lazy"></div>
+    <div class="card-body">
+      <h3>中国式网游</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>讽刺</span><span>模拟</span><span>国产</span></div>
+    </div>
+  </a><a class="card" href="dont-starve.html">
+    <div class="card-cover"><img src="img/dont-starve/cover.svg" alt="饥荒" loading="lazy"></div>
+    <div class="card-body">
+      <h3>饥荒</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>生存</span><span>手绘</span><span>硬核</span></div>
     </div>
   </a></div></section>
 </div>

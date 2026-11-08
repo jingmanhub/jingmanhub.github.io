@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>角色扮演 - 靖满客</title>
+<meta name="description" content="角色扮演类游戏合集">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0c0e13; --panel:#151922; --panel2:#1c212c; --line:#272e3b;
+  --text:#e9edf5; --muted:#8d97a9; --brand:#ff5c39; --brand2:#ffb03a;
+}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img{display:block}
+.wrap{width:min(1200px,92%);margin:0 auto}
+body>.wrap{flex:1}
+
+/* 导航 */
+.nav{position:sticky;top:0;z-index:60;background:#0c0e13e6;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:22px;height:64px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:17px;letter-spacing:.3px;flex-shrink:0}
+.logo i{width:9px;height:22px;border-radius:3px;background:linear-gradient(180deg,var(--brand),var(--brand2))}
+.nav-links{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-shrink:0}
+.nav-links a:hover{color:var(--text)}
+.nav-search{margin-left:auto;flex:1;max-width:300px}
+.nav-search input{width:100%;height:36px;padding:0 14px;border-radius:99px;border:1px solid var(--line);background:var(--panel);color:var(--text);font-size:13px;outline:none;font-family:inherit}
+.nav-search input:focus{border-color:#4a5468;background:var(--panel2)}
+.nav-search input::placeholder{color:#69738a}
+
+/* Banner */
+.banner{position:relative;height:430px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.banner-bg{position:absolute;inset:0;background:url('img/banner.jpg') center 35%/cover no-repeat;transform:scale(1.04)}
+.banner-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 120% at 50% 0%,#0c0e1380 0%,#0c0e13 78%)}
+.banner-in{position:relative;z-index:2;text-align:center;width:min(760px,90%)}
+.banner h1{font-size:44px;line-height:1.25;font-weight:850;letter-spacing:-.5px;margin-bottom:12px}
+.banner h1 em{font-style:normal;background:linear-gradient(100deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.banner p{color:#b6c0d2;font-size:15px;margin-bottom:30px}
+.big-search{display:flex;background:#fff;border-radius:99px;padding:6px;box-shadow:0 18px 44px #00000070}
+.big-search input{flex:1;border:none;outline:none;padding:0 20px;font-size:15px;color:#1a1d24;background:transparent;font-family:inherit;min-width:0}
+.big-search button{border:none;padding:0 30px;height:46px;border-radius:99px;background:linear-gradient(120deg,var(--brand),#ff7a2f);color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.big-search button:hover{filter:brightness(1.08)}
+.hint{margin-top:16px;font-size:12.5px;color:#7d879a}
+
+/* 分区 */
+.sec{margin-top:64px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-size:21px;font-weight:780;display:flex;align-items:center;gap:10px}
+.sec-head h2 i{width:5px;height:19px;border-radius:2px;background:linear-gradient(180deg,var(--brand),var(--brand2));display:block}
+.sec-head span{font-size:13px;color:var(--muted);margin-left:4px;font-weight:400}
+.more{font-size:13px;color:var(--brand);white-space:nowrap}
+.more:hover{text-decoration:underline}
+
+/* 卡片 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .25s cubic-bezier(.2,.7,.3,1),border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);border-color:#3b4557;box-shadow:0 20px 40px #000000a0}
+.card-cover{position:relative;aspect-ratio:4/5;background:linear-gradient(140deg,#232a38,#171b24);overflow:hidden}
+.card-cover img{width:100%;height:100%;object-fit:cover;object-position:center 32%;transition:transform .5s}
+.card:hover .card-cover img{transform:scale(1.05)}
+.card-body{padding:13px 14px 15px}
+.card-body h3{font-size:14.5px;font-weight:700;line-height:1.4;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-body p{font-size:12px;color:var(--muted);margin-bottom:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:11px;padding:2.5px 8px;border-radius:99px;background:#ffffff10;color:#a8b3c6;border:1px solid #ffffff0d}
+.badge{position:absolute;top:10px;right:10px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;background:var(--brand);color:#fff;letter-spacing:.3px}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.cat-card{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;background:linear-gradient(120deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;transition:.25s}
+.cat-card:hover{border-color:#454f63;transform:translateY(-3px)}
+.cat-card b{font-size:16px;font-weight:750;display:block}
+.cat-card small{color:var(--muted);font-size:12.5px}
+.cat-card em{font-style:normal;color:var(--brand);font-size:20px}
+
+/* 列表页头 */
+.page-head{padding:46px 0 8px}
+.page-head h1{font-size:30px;font-weight:800;margin-bottom:8px}
+.page-head p{color:var(--muted);font-size:13.5px}
+
+/* 详情页 */
+.detail{display:grid;grid-template-columns:330px 1fr;gap:44px;padding:40px 0 80px;align-items:start;flex:1}
+.detail-cover{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--panel);box-shadow:0 24px 50px #0000008c}
+.detail-cover img{width:100%;height:auto;display:block}
+.detail-main h1{font-size:32px;font-weight:830;line-height:1.3;margin-bottom:12px;letter-spacing:-.3px}
+.detail-sub{color:#9aa5b8;font-size:14px;margin-bottom:18px}
+.detail-main .intro{color:#c3cbd9;font-size:14.5px;line-height:1.85;margin:22px 0}
+.spec{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:13px;color:#a5b0c2;margin-bottom:26px}
+.spec b{color:var(--text);font-weight:650}
+.dl{display:flex;gap:14px;flex-wrap:wrap}
+.dl a{width:100%;height:56px;border:none;border-radius:13px;font-size:15.5px;font-weight:750;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.dl .quark{background:linear-gradient(120deg,#2f6bff,#5b8cff);color:#fff}
+.dl a:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.tip{font-size:12.5px;color:#7f8a9d;margin-top:14px}
+.steps{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.steps b{display:block;font-size:13.5px;margin-bottom:10px;color:#dfe5ef}
+.steps ol{margin:0;padding-left:19px;color:#98a3b6;font-size:13px;line-height:2}
+.steps li::marker{color:var(--brand);font-weight:700}
+
+/* 弹窗 */
+.mask{position:fixed;inset:0;z-index:100;background:#000000cc;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}
+.mask.on{display:flex}
+.pop{background:#fff;border-radius:20px;padding:22px;text-align:center;max-width:340px;width:100%}
+.pop h4{color:#15181f;font-size:16px;font-weight:750;margin-bottom:6px}
+.pop p{color:#6b7382;font-size:12.5px;margin-bottom:14px}
+.pop img{width:100%;border-radius:12px;background:#f4f5f7}
+.pop button{margin-top:14px;width:100%;height:44px;border:none;border-radius:11px;background:#15181f;color:#fff;font-size:14px;font-weight:650;cursor:pointer;font-family:inherit}
+
+/* 搜索命中弹窗 */
+.sr-item{padding:14px 16px;border-radius:11px;background:var(--panel);border:1px solid var(--line);margin-bottom:9px;cursor:pointer;font-size:14px;color:var(--text);transition:.15s}
+.sr-item:hover{background:var(--panel2);border-color:#48536a}
+.sr-empty{color:var(--muted);font-size:13.5px;text-align:center;padding:10px 0}
+
+/* 页脚 */
+footer{margin-top:auto;border-top:1px solid var(--line);padding:34px 0 46px;color:#6c7688;font-size:12.5px}
+footer .f-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:14px}
+footer b{color:#b9c2d2;font-weight:700}
+footer a:hover{color:var(--brand)}
+
+@media(max-width:860px){
+  .detail{grid-template-columns:1fr;gap:26px}
+  .detail-cover{max-width:260px}
+  .banner{height:340px}
+  .banner h1{font-size:29px}
+  .nav-links{display:none}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px}
+  .detail-main h1{font-size:24px}
+  .sec{margin-top:46px}
+}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap nav-in">
+  <a class="logo" href="index.html"><i></i>靖满客</a>
+  <nav class="nav-links">
+    <a href="index.html">首页</a>
+    <a href="all.html">全部游戏</a>
+    <a href="action.html">动作冒险</a>
+    <a href="strategy.html">策略模拟</a>
+    <a href="shooter.html">射击竞技</a>
+    <a href="casual.html">休闲解谜</a>
+  </nav>
+  <form class="nav-search" onsubmit="goSearch(event)">
+    <input id="navQ" type="search" placeholder="搜索游戏名称…" autocomplete="off">
+  </form>
+</div></header>
+<div class="wrap">
+  <div class="page-head">
+    <h1>角色扮演</h1>
+    <p>角色扮演类游戏合集　共 6 款</p>
+  </div>
+  <section class="sec"><div class="grid"><a class="card" href="witcher-3.html">
+    <div class="card-cover"><img src="img/witcher-3/cover.svg" alt="巫师3：狂猎" loading="lazy"></div>
+    <div class="card-body">
+      <h3>巫师3：狂猎</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>角色扮演</span><span>开放世界</span><span>剧情</span></div>
+    </div>
+  </a><a class="card" href="kingdom-come.html">
+    <div class="card-cover"><img src="img/kingdom-come/cover.svg" alt="天国：拯救" loading="lazy"></div>
+    <div class="card-body">
+      <h3>天国：拯救</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>中世纪</span><span>写实</span><span>开放世界</span></div>
+    </div>
+  </a><a class="card" href="baldurs-gate-3.html">
+    <div class="card-cover"><img src="img/baldurs-gate-3/cover.svg" alt="博德之门3" loading="lazy"></div>
+    <div class="card-body">
+      <h3>博德之门3</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>CRPG</span><span>D&amp;D</span><span>自由</span></div>
+    </div>
+  </a><a class="card" href="tale-of-immortal.html">
+    <div class="card-cover"><img src="img/tale-of-immortal/cover.svg" alt="鬼谷八荒" loading="lazy"></div>
+    <div class="card-body">
+      <h3>鬼谷八荒</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>修仙</span><span>沙盒</span><span>国产</span></div>
+    </div>
+  </a><a class="card" href="fallout-series.html">
+    <div class="card-cover"><img src="img/fallout-series/cover.svg" alt="辐射系列" loading="lazy"></div>
+    <div class="card-body">
+      <h3>辐射系列</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>废土</span><span>末世</span><span>角色扮演</span></div>
+    </div>
+  </a><a class="card" href="diablo-series.html">
+    <div class="card-cover"><img src="img/diablo-series/cover.svg" alt="暗黑破坏神合集" loading="lazy"></div>
+    <div class="card-body">
+      <h3>暗黑破坏神合集</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>刷装备</span><span>地牢</span><span>系列</span></div>
+    </div>
+  </a></div></section>
+</div>
+<footer><div class="wrap">
+  <div class="f-top">
+    <div><b>靖满客</b> · 解压即玩 · 持续更新</div>
+    <div><a href="all.html">全部游戏</a> ｜ <a href="index.html">返回首页</a></div>
+  </div>
+  <div>本站所有资源均收集自互联网，仅供个人学习与试玩交流，请在 24 小时内删除。若喜欢请支持正版，版权归原作者及发行商所有。如有侵权请联系删除。</div>
+</div></footer>
+<script>
+function goSearch(e){
+  if(e) e.preventDefault();
+  var q = document.getElementById('navQ').value.trim();
+  if(!q) return;
+  location.href = 'index.html?q=' + encodeURIComponent(q);
+}</script>
+</body>
+</html>

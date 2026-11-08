@@ -65,7 +65,7 @@ body>.wrap{flex:1}
 .card-body p{font-size:12px;color:var(--muted);margin-bottom:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tags span{font-size:11px;padding:2.5px 8px;border-radius:99px;background:#ffffff10;color:#a8b3c6;border:1px solid #ffffff0d}
-.badge{position:absolute;top:10px;left:10px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;background:var(--brand);color:#fff;letter-spacing:.3px}
+.badge{position:absolute;top:10px;right:10px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:8px;background:var(--brand);color:#fff;letter-spacing:.3px}
 
 /* 分类入口 */
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
@@ -90,9 +90,9 @@ body>.wrap{flex:1}
 .spec{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:13px;color:#a5b0c2;margin-bottom:26px}
 .spec b{color:var(--text);font-weight:650}
 .dl{display:flex;gap:14px;flex-wrap:wrap}
-.dl button{width:100%;height:56px;border:none;border-radius:13px;font-size:15.5px;font-weight:750;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.dl a{width:100%;height:56px;border:none;border-radius:13px;font-size:15.5px;font-weight:750;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
 .dl .quark{background:linear-gradient(120deg,#2f6bff,#5b8cff);color:#fff}
-.dl button:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.dl a:hover{transform:translateY(-2px);filter:brightness(1.1)}
 .tip{font-size:12.5px;color:#7f8a9d;margin-top:14px}
 .steps{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
 .steps b{display:block;font-size:13.5px;margin-bottom:10px;color:#dfe5ef}
@@ -137,8 +137,9 @@ footer a:hover{color:var(--brand)}
   <nav class="nav-links">
     <a href="index.html">首页</a>
     <a href="all.html">全部游戏</a>
-    <a href="strategy.html">策略模拟</a>
     <a href="action.html">动作冒险</a>
+    <a href="strategy.html">策略模拟</a>
+    <a href="shooter.html">射击竞技</a>
     <a href="casual.html">休闲解谜</a>
   </nav>
   <form class="nav-search" onsubmit="goSearch(event)">
@@ -148,35 +149,91 @@ footer a:hover{color:var(--brand)}
 <div class="wrap">
   <div class="page-head">
     <h1>策略模拟</h1>
-    <p>策略模拟类游戏合集　共 4 款</p>
+    <p>策略模拟类游戏合集　共 12 款</p>
   </div>
-  <section class="sec"><div class="grid"><a class="card" href="civilization6.html">
+  <section class="sec"><div class="grid"><a class="card" href="victoria3.html">
+    <div class="card-cover"><img src="img/victoria3/cover.jpg" alt="维多利亚3" loading="lazy"></div>
+    <div class="card-body">
+      <h3>维多利亚3</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>经济</span><span>大战略</span><span>历史</span></div>
+    </div>
+  </a><a class="card" href="stellaris.html">
+    <div class="card-cover"><img src="img/stellaris/cover.jpg" alt="群星" loading="lazy"></div>
+    <div class="card-body">
+      <h3>群星</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>太空</span><span>大战略</span><span>沙盒</span></div>
+    </div>
+  </a><a class="card" href="civilization6.html">
     <div class="card-cover"><img src="img/civilization6/cover.jpg" alt="文明6" loading="lazy"></div>
     <div class="card-body">
       <h3>文明6</h3>
-      <p>典藏版 · 全 DLC · 中文</p>
+      <p>中文版 · 解压即玩</p>
       <div class="tags"><span>策略</span><span>回合制</span><span>4X</span></div>
     </div>
-  </a><a class="card" href="stellaris.html">
-    <div class="card-cover"><div class="badge">NEW</div><img src="img/stellaris/cover.jpg" alt="群星" loading="lazy"></div>
+  </a><a class="card" href="cities-skylines-2.html">
+    <div class="card-cover"><img src="img/cities-skylines-2/cover.svg" alt="城市天际线2" loading="lazy"></div>
     <div class="card-body">
-      <h3>群星</h3>
-      <p>银河版 · 含主要 DLC</p>
-      <div class="tags"><span>太空</span><span>大战略</span><span>沙盒</span></div>
+      <h3>城市天际线2</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>模拟</span><span>建造</span><span>经营</span></div>
     </div>
-  </a><a class="card" href="victoria3.html">
-    <div class="card-cover"><div class="badge">NEW</div><img src="img/victoria3/cover.jpg" alt="维多利亚3" loading="lazy"></div>
+  </a><a class="card" href="hearts-of-iron.html">
+    <div class="card-cover"><img src="img/hearts-of-iron/cover.svg" alt="钢铁雄心" loading="lazy"></div>
     <div class="card-body">
-      <h3>维多利亚3</h3>
-      <p>豪华版 · 中文</p>
-      <div class="tags"><span>经济</span><span>大战略</span><span>历史</span></div>
+      <h3>钢铁雄心</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>二战</span><span>大战略</span><span>军事</span></div>
     </div>
   </a><a class="card" href="warcraft3.html">
-    <div class="card-cover"><img src="img/warcraft3/cover.jpg" alt="魔兽争霸3" loading="lazy"></div>
+    <div class="card-cover"><img src="img/warcraft3/cover.jpg" alt="魔兽争霸3：冰封王座" loading="lazy"></div>
     <div class="card-body">
-      <h3>魔兽争霸3</h3>
-      <p>冰封王座 · 重制增强版</p>
+      <h3>魔兽争霸3：冰封王座</h3>
+      <p>中文版 · 解压即玩</p>
       <div class="tags"><span>RTS</span><span>即时战略</span><span>电竞经典</span></div>
+    </div>
+  </a><a class="card" href="age-of-empires.html">
+    <div class="card-cover"><img src="img/age-of-empires/cover.svg" alt="帝国时代" loading="lazy"></div>
+    <div class="card-body">
+      <h3>帝国时代</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>RTS</span><span>历史</span><span>经典</span></div>
+    </div>
+  </a><a class="card" href="red-alert.html">
+    <div class="card-cover"><img src="img/red-alert/cover.svg" alt="红色警戒" loading="lazy"></div>
+    <div class="card-body">
+      <h3>红色警戒</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>RTS</span><span>怀旧</span><span>即时战略</span></div>
+    </div>
+  </a><a class="card" href="total-war-series.html">
+    <div class="card-cover"><img src="img/total-war-series/cover.svg" alt="全面战争系列合集" loading="lazy"></div>
+    <div class="card-body">
+      <h3>全面战争系列合集</h3>
+      <p>系列合集 · 多部打包</p>
+      <div class="tags"><span>大战略</span><span>战场</span><span>系列</span></div>
+    </div>
+  </a><a class="card" href="total-war-warhammer-2.html">
+    <div class="card-cover"><img src="img/total-war-warhammer-2/cover.svg" alt="全面战争：战锤2" loading="lazy"></div>
+    <div class="card-body">
+      <h3>全面战争：战锤2</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>奇幻</span><span>战场</span><span>战略</span></div>
+    </div>
+  </a><a class="card" href="starcraft.html">
+    <div class="card-cover"><img src="img/starcraft/cover.svg" alt="星际争霸" loading="lazy"></div>
+    <div class="card-body">
+      <h3>星际争霸</h3>
+      <p>中文版 · 解压即玩</p>
+      <div class="tags"><span>RTS</span><span>电竞</span><span>经典</span></div>
+    </div>
+  </a><a class="card" href="kingdom-two-crowns.html">
+    <div class="card-cover"><img src="img/kingdom-two-crowns/cover.svg" alt="王国：两位君主" loading="lazy"></div>
+    <div class="card-body">
+      <h3>王国：两位君主</h3>
+      <p>全 DLC · 豪华中文版</p>
+      <div class="tags"><span>建造</span><span>防守</span><span>像素</span></div>
     </div>
   </a></div></section>
 </div>

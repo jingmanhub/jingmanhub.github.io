@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1a1f2b"/><stop offset="1" stop-color="#0d1016"/>
+  </linearGradient>
+  <radialGradient id="gl" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#22c55e" stop-opacity="0.45"/>
+    <stop offset="1" stop-color="#22c55e" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+<rect width="1080" height="1350" fill="url(#bg)"/>
+<circle cx="950.4" cy="175.5" r="712.8000000000001" fill="url(#gl)"/>
+<circle cx="43.2" cy="1282.5" r="594" fill="url(#gl)" opacity="0.45"/>
+<g font-family="'Microsoft YaHei','PingFang SC','Noto Sans SC',system-ui,sans-serif">
+  <rect x="90" y="104" width="166" height="62" rx="31" fill="none" stroke="#22c55e" stroke-width="2.5" opacity="0.85"/>
+  <text x="113" y="146" font-size="27" fill="#22c55e" opacity="0.95">休闲解谜</text>
+  <text x="90" y="648" font-size="208" font-weight="900" fill="#fff">神庙逃亡</text>
+  <rect x="90" y="835.2" width="130" height="9" rx="4.5" fill="#22c55e"/>
+  <text x="90" y="1254" font-size="34" fill="#7d8798">靖满客 · 解压即玩</text>
+</g>
+</svg>
