@@ -92,9 +92,9 @@ body>.wrap{flex:1}
 .spec{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:13px;color:#a5b0c2;margin-bottom:26px}
 .spec b{color:var(--text);font-weight:650}
 .dl{display:flex;gap:14px;flex-wrap:wrap}
-.dl a{width:100%;height:56px;border:none;border-radius:13px;font-size:15.5px;font-weight:750;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.dl button{width:100%;height:56px;border:none;border-radius:13px;font-size:15.5px;font-weight:750;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
 .dl .quark{background:linear-gradient(120deg,#2f6bff,#5b8cff);color:#fff}
-.dl a:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.dl button:hover{transform:translateY(-2px);filter:brightness(1.1)}
 .tip{font-size:12.5px;color:#7f8a9d;margin-top:14px}
 .steps{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
 .steps b{display:block;font-size:13.5px;margin-bottom:10px;color:#dfe5ef}
@@ -158,18 +158,26 @@ footer a:hover{color:var(--brand)}
       <p class="intro">抓怪 + 建厂 + 打工。把帕鲁安排去砍树挖矿，自己在旁边摸鱼，玩法缝合得意外好玩。</p>
       <div class="spec"><b>配置要求：</b>Windows 10 64 位 / i5-8600 / 16GB / GTX 1060</div>
       <div class="dl">
-        <a class="quark" href="https://pan.quark.cn/s/de53b53d1889" target="_blank" rel="noopener noreferrer">前往夸克网盘</a>
+        <button class="quark" onclick="openQr()">夸克网盘下载</button>
       </div>
-      <p class="tip">直达夸克网盘分享页，登录后「保存到网盘」即可转存下载。</p>
+      <p class="tip">点击按钮弹出该游戏的网盘二维码，用微信或夸克 App 扫码获取。</p>
       <div class="steps">
         <b>下载说明</b>
         <ol>
-          <li>点击上方按钮，打开夸克网盘分享页</li>
-          <li>登录后点「保存到网盘」，转存到自己的账号</li>
-          <li>在夸克 App 或网页版里下载，解压即可游玩</li>
+          <li>点击上方按钮，弹出本作的夸克网盘二维码</li>
+          <li>用微信或夸克 App 扫一扫，打开分享页</li>
+          <li>登录后点「保存到网盘」，转存到自己账号再下载解压</li>
         </ol>
       </div>
     </div>
+  </div>
+</div>
+<div class="mask" id="mask" onclick="if(event.target===this)closeQr()">
+  <div class="pop">
+    <h4>幻兽帕鲁 · 夸克网盘</h4>
+    <p>手机扫码获取资源</p>
+    <img src="img/qr/palworld.png" alt="幻兽帕鲁 夸克网盘二维码">
+    <button onclick="closeQr()">关闭</button>
   </div>
 </div>
 <footer><div class="wrap">
@@ -187,6 +195,9 @@ function goSearch(e){
   if(!q) return;
   location.href = 'index.html?q=' + encodeURIComponent(q);
 }
+function openQr(){ document.getElementById('mask').classList.add('on'); }
+function closeQr(){ document.getElementById('mask').classList.remove('on'); }
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeQr(); });
 </script>
 </body>
 </html>
